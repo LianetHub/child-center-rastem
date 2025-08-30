@@ -45,35 +45,54 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 // ОБЩИЕ ПАРАМЕТРЫ
 
 @import "common";
+@import "header";
+@import "footer";
 @import "grid";
 @import "ui";
 @import "forms";
-@import "header";
-@import "footer";
 @import "forms";
 
 //=======================================
 
 .promo {
-	background: url("@img/promo-bg.jpg") 0 0 / cover no-repeat;
-	padding-top: 11.5rem;
-	padding-bottom: 14.4rem;
+	background: url("@img/promo-bg.jpg") center 0 / cover no-repeat;
 	position: relative;
 	z-index: 1;
 	overflow: hidden;
 	mask: url("@img/masks/promo-mask.svg") 0 100% / cover no-repeat;
 	-webkit-mask: url("@img/masks/promo-mask.svg") 0 100% / cover no-repeat;
+	padding-top: 5rem;
+	padding-bottom: 7.5rem;
+	@media (min-width: $md4) {
+		padding-top: 11.5rem;
+		padding-bottom: 14.4rem;
+	}
 	&::before {
 		content: "";
 		position: absolute;
-		top: 0;
-		left: -25%;
-		width: 70.3125rem;
-		height: 70.3125rem;
 		background: #f6f8f9;
+		left: -25%;
 		border-radius: 50%;
 		z-index: -1;
-		filter: blur(rem(200));
+		width: 25rem;
+		height: 25rem;
+		bottom: 0;
+		filter: blur(rem(140));
+		@media (min-width: $md5) {
+			width: 40rem;
+			height: 40rem;
+		}
+		@media (min-width: $md4) {
+			filter: blur(rem(200));
+			top: 0;
+			bottom: auto;
+			width: 50rem;
+			height: 50rem;
+		}
+		@media (min-width: $md1) {
+			width: 70.3125rem;
+			height: 70.3125rem;
+		}
 	}
 
 	// .promo__offer
@@ -83,23 +102,28 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .promo__title
 	&__title {
-		font-size: 3.375rem;
 		font-weight: 100;
 		line-height: 122.222%;
 		letter-spacing: -0.135rem;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		font-size: 2rem;
+		@media (min-width: $md3) {
+			font-size: 3.375rem;
+		}
 		& span {
 			margin-top: 0.5rem;
-			font-size: 6rem;
 			color: #1da7df;
-			font-size: 6rem;
 			font-weight: 400;
 			line-height: 90.208%;
 			display: flex;
 			flex-direction: column;
-			letter-spacing: 0.05rem;
+			font-size: 3rem;
+			@media (min-width: $md3) {
+				letter-spacing: 0.05rem;
+				font-size: 6rem;
+			}
 			& strong {
 				letter-spacing: 0.35rem;
 				font-weight: 800;
@@ -120,12 +144,17 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .promo__description
 	&__description {
-		margin-top: 2.15rem;
 		color: rgba(36, 78, 82, 0.8);
-		font-size: 1.75rem;
 		font-weight: 200;
 		line-height: 132.143%;
-		max-width: 37.5rem;
+		max-width: 20rem;
+		@media (min-width: $md2) {
+			max-width: 37.5rem;
+		}
+		@media (min-width: $md3) {
+			margin-top: 2.15rem;
+			font-size: 1.75rem;
+		}
 	}
 }
 
@@ -146,26 +175,38 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		content: "";
 		position: absolute;
 		top: -3rem;
-		left: 17rem;
+		left: 2rem;
+		@media (min-width: $md5) {
+			left: 17rem;
+		}
 		width: 11.08188rem;
 		height: 5.32656rem;
 		z-index: 2;
 		background: url("@img/decor/airplane.svg") center / contain no-repeat;
 	}
 	.row {
-		.col-6 {
+		row-gap: 4rem;
+		.col-lg-6 {
 			padding: 0 0.5rem;
 		}
 	}
 	// .support__image
 	&__image {
-		margin-top: 1rem;
-		margin-left: -5rem;
 		position: relative;
+		margin-left: -2rem;
+		margin-right: -2rem;
+		@media (min-width: $md3) {
+			margin-top: 1rem;
+			margin-left: -5rem;
+			margin-right: 0;
+		}
 		&::before {
 			content: "";
 			position: absolute;
-			inset: -4.5rem;
+			inset: -2.5rem;
+			@media (min-width: $md4) {
+				inset: -4.5rem;
+			}
 			background: url("@img/decor/support-img-decor.svg") center / contain no-repeat;
 		}
 		& img {
@@ -229,17 +270,21 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 }
 
 .directions {
-	padding: 4rem 0;
+	padding: 2rem 0;
+	@media (min-width: $md4) {
+		padding: 4rem 0;
+	}
 	// .directions__title
 	&__title {
 		text-align: center;
-
-		text-align: center;
-		font-size: 4.125rem;
 		font-weight: 100;
 		line-height: 1;
-		letter-spacing: -0.3rem;
 		text-transform: uppercase;
+		font-size: 2.5rem;
+		@media (min-width: $md4) {
+			letter-spacing: -0.3rem;
+			font-size: 4.125rem;
+		}
 		& span {
 			font-weight: 500;
 			color: #1da7df;
@@ -249,7 +294,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	&__body {
 		margin-top: 4rem;
 		.row {
-			.col-4 {
+			.col-xl-4 {
 				padding: 1.5rem 1rem;
 			}
 		}
@@ -286,17 +331,20 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 }
 
 .start {
-	padding: 2.5rem 1.5rem 3.5rem;
-	position: relative;
-	&::before {
-		content: "";
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		left: 4rem;
-		width: 100%;
-		height: 90%;
-		background: url("@img/decor/start-bg-decor.svg") 3rem center / contain no-repeat;
+	padding: 2.5rem 0rem 3.5rem;
+	@media (min-width: $md3) {
+		padding: 2.5rem 1.5rem 3.5rem;
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 4rem;
+			width: 100%;
+			height: 90%;
+			background: url("@img/decor/start-bg-decor.svg") 3rem center / contain no-repeat;
+		}
 	}
 	// .start__banner
 	&__banner {
@@ -305,19 +353,40 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		width: 100%;
 		background: url("@img/decor/pattern.png"), #05538f;
 		background-blend-mode: darken;
-		mask: url("@img/masks/start-block-mask.svg") center / contain no-repeat;
-		-webkit-mask: url("@img/masks/start-block-mask.svg") center / contain no-repeat;
+		overflow: hidden;
+		border-radius: 1.5rem;
+		@media (min-width: $md3) {
+			border-radius: 3rem;
+		}
 		&::before {
-			content: "";
-			position: absolute;
-			top: 50%;
-			transform: translate(-50%, -50%);
-			left: 43%;
-			width: rem(345);
-			height: rem(445);
-			background: url("@img/decor/start-decor.png") center / contain no-repeat;
-			pointer-events: none;
-			z-index: 2;
+			@media (min-width: $md3) {
+				content: "";
+				position: absolute;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				background: url("@img/decor/start-decor.png") center / contain no-repeat;
+				pointer-events: none;
+				z-index: 2;
+				height: rem(325);
+				width: rem(225);
+				left: 55%;
+			}
+			@media (min-width: $md1) {
+				left: 43%;
+				width: rem(345);
+				height: rem(445);
+			}
+		}
+		@media (min-width: $md1) {
+			border-radius: 0;
+			min-height: rem(655);
+			display: flex;
+			.row {
+				min-height: 100%;
+				width: 100%;
+			}
+			mask: url("@img/masks/start-block-mask.svg") center / 100% auto no-repeat;
+			-webkit-mask: url("@img/masks/start-block-mask.svg") center / 100% auto no-repeat;
 		}
 	}
 	// .start__offer
@@ -329,11 +398,16 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		justify-content: center;
 		flex-direction: column;
 		min-height: 100%;
-		padding: 2.5rem 7rem 7rem 8rem;
+		padding: 2.5rem 1.5rem;
+		@media (min-width: $md3) {
+			padding: 2.5rem 2rem 2.5rem 4rem;
+		}
+		@media (min-width: $md1) {
+			padding: 2.5rem 7rem 7rem 8rem;
+		}
 	}
 	// .start__title
 	&__title {
-		font-size: 4.375rem;
 		font-weight: 100;
 		line-height: 102.857%;
 		letter-spacing: -0.0875rem;
@@ -343,13 +417,20 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		& strong {
 			font-weight: 800;
 		}
+		font-size: 3rem;
+		@media (min-width: $md3) {
+			font-size: 4.375rem;
+		}
 	}
 	// .start__description
 	&__description {
 		margin-top: rem(30);
-		font-size: 1.5rem;
 		font-weight: 300;
 		line-height: 125%;
+		font-size: 1rem;
+		@media (min-width: $md3) {
+			font-size: 1.5rem;
+		}
 	}
 	// .start__btn
 	&__btn {
@@ -358,47 +439,88 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	// .start__image
 	&__image {
 		margin-left: -1rem;
+		min-height: 100%;
+		position: relative;
 		& img {
-			mask: url("@img/masks/start-img-mask.svg") 100% center / auto 100% no-repeat;
-			-webkit-mask: url("@img/masks/start-img-mask.svg") 100% center / auto 100% no-repeat;
+			@media (min-width: $md3) {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				min-height: 100%;
+				mask: url("@img/masks/start-img-mask.svg") 0 center / cover no-repeat;
+				-webkit-mask: url("@img/masks/start-img-mask.svg") 0 center / cover no-repeat;
+			}
 		}
 	}
 }
 
 .place {
-	padding: 6rem 0 7.25rem;
+	padding: 3rem 0 3.25rem;
+	@media (min-width: $md4) {
+		padding: 6rem 0 7.25rem;
+	}
+	.row {
+		align-items: center;
+		row-gap: 4rem;
+	}
 	// .place__title
 	&__title {
 		& span {
 			color: #1da7df;
+		}
+		& strong {
+			& span {
+				position: relative;
+				display: inline-block;
+				&::before {
+					content: "";
+					position: absolute;
+					top: calc(100% - 0.35rem);
+					left: 0;
+					width: 100%;
+					height: rem(18);
+					background: url("@img/decor/support-title-lines-1.svg") center / contain no-repeat;
+				}
+			}
 		}
 	}
 	// .place__description
 	&__description {
 		margin-top: rem(20);
 		color: rgba(36, 78, 82, 0.8);
-		font-size: 1.3125rem;
 		line-height: 142.857%;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
 		gap: 1rem;
+		@media (min-width: $md4) {
+			font-size: 1.3125rem;
+		}
 	}
 	// .place__btn
 	&__btn {
 		margin-top: 1.25rem;
-		padding: 1.5rem;
+		@media (min-width: $md4) {
+			padding: 1.5rem;
+		}
 	}
 	// .place__image
 	&__image {
-		margin-top: -1.5rem;
 		position: relative;
-		margin-left: 2.5rem;
+		@media (min-width: $md3) {
+			margin-top: -1.5rem;
+			margin-left: 2.5rem;
+		}
 		&::before {
 			content: "";
 			position: absolute;
-			inset: -4rem;
 			background: url("@img/decor/support-img-decor.svg") center / contain no-repeat;
+			inset: -2.5rem;
+			@media (min-width: $md3) {
+				inset: -4rem;
+			}
 		}
 		& img {
 			mask: url("@img/masks/support-mask.svg") center / contain no-repeat;
@@ -415,31 +537,44 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	position: relative;
 	z-index: 1;
 	&::before {
-		content: "";
-		position: absolute;
-		bottom: 4rem;
-		left: 14rem;
-		width: rem(72);
-		height: rem(98);
-		pointer-events: none;
-		z-index: -1;
-		background: url("@img/decor/contacts-decor-1.svg") center / contain no-repeat;
+		@media (min-width: $md5) {
+			content: "";
+			position: absolute;
+			bottom: 4rem;
+			width: rem(72);
+			height: rem(98);
+			pointer-events: none;
+			z-index: -1;
+			background: url("@img/decor/contacts-decor-1.svg") center / contain no-repeat;
+			left: 4%;
+		}
+		@media (min-width: $md1) {
+			left: 13%;
+		}
 	}
 	&::after {
-		content: "";
-		position: absolute;
-		top: 4rem;
-		right: 12.5rem;
-		width: rem(86);
-		height: rem(86);
-		pointer-events: none;
-		z-index: -1;
-		background: url("@img/decor/contacts-decor-2.svg") center / contain no-repeat;
+		@media (min-width: $md5) {
+			content: "";
+			position: absolute;
+			top: 4rem;
+			width: rem(86);
+			height: rem(86);
+			pointer-events: none;
+			z-index: -1;
+			background: url("@img/decor/contacts-decor-2.svg") center / contain no-repeat;
+			right: 4%;
+		}
+		@media (min-width: $md1) {
+			right: 12%;
+		}
 	}
 	// .contacts__body
 	&__body {
 		max-width: rem(1086);
 		margin: 0 auto;
+		.row {
+			row-gap: 4rem;
+		}
 	}
 	// .contacts__block
 	&__block {
@@ -454,11 +589,14 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	// .contacts__title
 	&__title {
 		margin-top: 1.88rem;
-		font-size: 3.75rem;
 		font-weight: 100;
 		line-height: 110%;
 		letter-spacing: -0.075rem;
 		text-transform: uppercase;
+		font-size: 2.75rem;
+		@media (min-width: $md5) {
+			font-size: 3.75rem;
+		}
 	}
 	// .contacts__btn
 	&__btn {

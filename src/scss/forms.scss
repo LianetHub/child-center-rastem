@@ -170,8 +170,10 @@
 	}
 
 	&.btn-lg {
-		font-size: 1.125rem;
-		padding: 1.5rem 1.88rem;
+		@media (min-width: $md5) {
+			padding: 1.5rem 1.88rem;
+			font-size: 1.125rem;
+		}
 	}
 
 	&.btn-fullwidth {

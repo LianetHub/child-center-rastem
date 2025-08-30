@@ -25,6 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener('click', (e) => {
         const target = e.target;
 
+        if (target.closest('.icon-menu') || target.classList.contains('header__menu')) {
+            document.querySelector('.header').classList.toggle('open-menu');
+        }
+
+
     });
 
 

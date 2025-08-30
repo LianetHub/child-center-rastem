@@ -7,7 +7,7 @@ body {
 	background: url("@img/decor/pattern.png");
 	margin-right: 0 !important;
 	&:has(.header.open-menu) {
-		@media (max-width: $md3) {
+		@media (max-width: $md2) {
 			overflow: hidden;
 		}
 	}
@@ -29,9 +29,8 @@ body {
 }
 
 .page {
-	padding-top: 4.87rem;
 	flex: 1 1 auto;
-	// overflow: hidden;
+	padding-top: 4.87rem;
 }
 
 // ================== ОБОЛОЧКА ===============================
