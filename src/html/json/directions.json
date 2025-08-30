@@ -1,0 +1,26 @@
+[
+    {
+        "image": "@img/directions/01.png",
+        "title": "Дефектология"
+    },
+    {
+        "image": "@img/directions/02.png",
+        "title": "АВА Терапия"
+    },
+    {
+        "image": "@img/directions/03.png",
+        "title": "Развитие речи <br> и коммуникации"
+    },
+    {
+        "image": "@img/directions/04.png",
+        "title": "Арт терапия. <br> Игровая терапия"
+    },
+    {
+        "image": "@img/directions/05.png",
+        "title": "Сенсорная Интеграция и&nbsp;Нейродинамика"
+    },
+    {
+        "image": "@img/directions/06.png",
+        "title": "Группа подготовки <br> к школе"
+    }
+]

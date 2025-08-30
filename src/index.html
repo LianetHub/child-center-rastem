@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {})
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {})
+            <main class="page">
+                <section class="promo">
+                    <div class="container">
+                        <div class="promo__offer">
+                            <h1 class="promo__title">
+                                маленькими шагами
+                                <span>к большим <strong>победам!</strong></span>
+                            </h1>
+                            <p class="promo__description">Мы помогаем детям с ограниченными возможностями здоровья раскрыть свой потенциал, познавая мир вокруг себя.</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="support">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="support__image">
+                                    <img src="@img/support.jpg" class="cover-image" alt="Фото">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="support__block">
+                                    <h2 class="support__title title">
+                                        Помогаем детям и семьям <strong class="support__title-decor-lg">добиваться успеха</strong>
+                                    </h2>
+                                    <p class="support__description">
+                                        С помощью самых эффективных направлений и методов наша&nbsp;команда помагает детям в индивидуальной&nbsp;и командной&nbsp;работе над развитием новых навыков и&nbsp;коррекции&nbsp;поведения.
+                                    </p>
+                                </div>
+                                <div class="support__block">
+                                    <h3 class="support__title title">
+                                        <strong class="support__title-decor-sm">Сила</strong> нейроразнообразия
+                                    </h3>
+                                    <p class="support__description">Наши специалисты видят сильные стороны детей, с которыми работают, и помогают им с помощью индивидуальных стратегий. Цели и важные этапы развития у каждого ребенка, которого мы встречаем - уникальный Наш подход, ориентированный на ребенка, учитывает индивидуальные потребности, сильные стороны и трудности каждого, помогая детям раскрывать дары нейроразнообразия.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="directions">
+                    <div class="container">
+                        <h2 class="directions__title">Направления <span>работы</span></h2>
+                        <div class="directions__body">
+                            <div class="row">
+                                @@loop('./html/templates/_directions-item.html', './html/json/directions.json')
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="start">
+                    <div class="container container-lg">
+                        <div class="start__banner">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="start__offer">
+                                        <h2 class="start__title">
+                                            С чего <strong>начать?</strong>
+                                        </h2>
+                                        <p class="start__description">Узнайте, как мы можем помочь, с сделайте первый шаг к поддержке и заботе.</p>
+                                        <a href="#start" data-fancybox class="start__btn btn btn-lg btn-white">начать</a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="start__image">
+                                        <img src="@img/start.jpg" class="cover-image" alt="Фото">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="place">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2 class="place__title title">
+                                    Место, где <span>удивительные люди</span>
+                                    работают с <strong>удивительными детьми.</strong>
+                                </h2>
+                                <div class="place__description">
+                                    <p>В нашем центре мы объединяем профессионалов, искренне преданных заботе о развитии и благополучии детей. наша команда - это люди с сердцем, которые каждый день делают мир&nbsp;добрее и поддерживают уникальные таланты каждого ребенка.</p>
+                                    <p>Будь вы опытным специалистом или только начинаете карьеру в этой вдохновляющей сфере - у нас есть место для вас.</p>
+                                </div>
+                                <a href="" class="place__btn btn btn-primary">узнать больше</a>
+                            </div>
+                            <div class="col-6">
+                                <div class="place__image">
+                                    <img src="@img/place.jpg" class="cover-image" alt="Фото">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="contacts">
+                    <div class="container">
+                        <div class="contacts__body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="contacts__block">
+                                        <div class="contacts__icon">
+                                            <img src="@img/decor/question-mark.svg" alt="Иконка">
+                                        </div>
+                                        <h2 class="contacts__title">Вопрос?</h2>
+                                        <a href="#contact" data-fancybox class="contacts__btn btn btn-white btn-lg">связаться</a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="contacts__block">
+                                        <div class="contacts__icon">
+                                            <img src="@img/decor/location.svg" alt="Иконка">
+                                        </div>
+                                        <h2 class="contacts__title">локация</h2>
+                                        <a href="" class="contacts__btn btn btn-white btn-lg">координаты</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            @@include('html/_footer.html', {})
+            @@include('html/_modal.html', {})
+            @@include('html/_js.html', {})
+        </div>
+    </body>
+</html>
