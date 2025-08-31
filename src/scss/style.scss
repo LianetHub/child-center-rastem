@@ -59,8 +59,8 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	position: relative;
 	z-index: 1;
 	overflow: hidden;
-	mask: url("@img/masks/promo-mask.svg") 0 100% / cover no-repeat;
 	-webkit-mask: url("@img/masks/promo-mask.svg") 0 100% / cover no-repeat;
+	mask: url("@img/masks/promo-mask.svg") 0 100% / cover no-repeat;
 	padding-top: 5rem;
 	padding-bottom: 7.5rem;
 	@media (min-width: $md4) {
@@ -70,20 +70,20 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	&::before {
 		content: "";
 		position: absolute;
-		background: #f6f8f9;
-		left: -25%;
-		border-radius: 50%;
+
+		left: 0;
 		z-index: -1;
 		width: 25rem;
 		height: 25rem;
 		bottom: 0;
-		filter: blur(rem(140));
-		@media (min-width: $md5) {
-			width: 40rem;
-			height: 40rem;
-		}
+		background: rgba($color: #fff, $alpha: 0.7);
+		width: 100%;
+		height: 100%;
 		@media (min-width: $md4) {
+			left: -25%;
+			border-radius: 50%;
 			filter: blur(rem(200));
+			background: #f6f8f9;
 			top: 0;
 			bottom: auto;
 			width: 50rem;

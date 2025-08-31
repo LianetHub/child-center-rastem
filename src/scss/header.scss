@@ -36,10 +36,23 @@
 	// .header__logo
 	&__logo {
 		flex-shrink: 0;
-		.logo__header-column,
-		.logo__tagline {
-			@media (max-width: $md5) {
-				display: none;
+		@media (max-width: 375px) {
+			.logo__header {
+				gap: rem(6);
+			}
+			.logo__image {
+				flex: 0 0 3rem;
+			}
+			.logo__header-column {
+				font-size: rem(12);
+				gap: 0;
+				max-width: 5rem;
+			}
+			.logo__name {
+				font-size: rem(15);
+			}
+			.logo__tagline {
+				font-size: rem(15);
 			}
 		}
 	}
