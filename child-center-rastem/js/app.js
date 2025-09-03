@@ -30,7 +30,33 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
+        if (target.classList.contains('menu__arrow')) {
+            const subMenu = target.nextElementSibling;
+
+            if (subMenu.classList.contains('open')) {
+                subMenu.classList.remove('open');
+                target.classList.remove('active');
+            } else {
+                closeAllMenus();
+                subMenu.classList.add('open');
+                target.classList.add('active');
+            }
+        }
+
+
     });
+
+    function closeAllMenus() {
+        document.querySelectorAll('.submenu.open').forEach(menu => {
+            menu.classList.remove('open');
+            const button = menu.previousElementSibling;
+            if (button && button.classList.contains('menu__arrow')) {
+                button.classList.remove('active');
+            }
+        });
+
+
+    }
 
 
 });
